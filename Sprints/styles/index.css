@@ -1,0 +1,21 @@
+body{
+    background-image: url("/Sprints/images/img3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+div{
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+h1{
+    color: white;
+    font-size: xxx-large;
+}
+button{
+    background-color: blue;
+    color: white;
+    border-radius: 15px;
+    font-size: xx-large;
+}

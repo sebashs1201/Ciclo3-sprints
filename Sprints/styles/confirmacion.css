@@ -1,0 +1,59 @@
+body{
+    background-image: url("/Sprints/images/img2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu{
+    background-color: rgba(51, 51, 51, 0.678);
+    overflow: hidden;
+    border-radius: 15px;
+    font-size: x-large;
+}
+
+.menu li {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    float: right;
+    list-style-type: none;
+    text-align: left;
+}
+
+.menu li:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.menu li.active {
+    background-color: #04AA6D;
+    color: white;
+}
+h1{
+    color: white;
+    font-size: xxx-large;
+    display:inline;
+}
+.contenedor{
+    border: solid;
+    border-radius: 15px;
+    width: 40%;
+    background-color: rgba(51, 51, 51, 0.678);
+    position: absolute;
+    left:30%;
+    padding-bottom: 4mm;
+    border-radius: 15px;
+}
+.datos{
+    text-align: center;
+    color: white;
+    font-size: medium;
+}
+button{
+    color:white;
+    border-radius: 15px;
+    background-color: blue;
+    font-size: medium   ;
+}
