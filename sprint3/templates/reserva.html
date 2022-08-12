@@ -2,14 +2,16 @@
 {% block title %}Reserva{% endblock %}
 {% block contenido %}
 <body>
-<h1>Reserva page</h1>
-<form method="POST", action="/disponibilidad">
-    {{form.hidden_tag()}}
-    {{form.checkin}}
-    {{form.checkout}}
-    {{form.people}}
-    {{form.submit}}
-</form>
-<br> Press <a href="{{ url_for('logout')}}">here</a> to logout
+    <div id="principal">
+        <h1>Reserva page</h1>
+        <form method="POST", action="/disponibilidad">
+            {{form.hidden_tag()}}
+            {{form.checkin}}
+            {{form.checkout}}
+            {{form.people}}
+            {{form.submit}}
+        </form>
+        <br><a href="{{ url_for('logout')}}" class="texto-activo">Logout</a>
+    </div>
 </body>
 {% endblock %}

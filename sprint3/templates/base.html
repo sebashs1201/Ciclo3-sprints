@@ -13,18 +13,21 @@
     <nav class ="menu">
         <ul>
             <h1 id="nombre-hotel">Burj Al Arab</h1>
-            <li>Promociones</li>
-            <li>Galeria de fotos</li>
-            <li>Contacto</li>
-            <li>{% block option %} {% endblock %}</li>
+            <section id="li-menu">
+                <li>Promociones</li>
+                <li>Galeria de fotos</li>
+                <li>Contacto</li>
+            </section>
+            <section id="user">
+                {% if 'usuario' in session: %}
+                <p>User: {{session['usuario']}}</p>
+                {% else %}
+                <p class="h3-user">User: Unknown</p>
+                {% endif %}
+            </section>
         </ul>
     </nav>
 </br>
-    {% if 'usuario' in session: %}
-    <h3>User: {{session['usuario']}}</h3>
-    {% else %}
-    <h3>without user</h3>
-    {% endif %}
     <div class="contenedor">
     {% block contenido %}
     

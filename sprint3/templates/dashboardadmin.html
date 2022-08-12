@@ -1,28 +1,30 @@
 {% extends 'base.html' %}
 {% block title %}Dashboard Admin{% endblock %}
 {% block contenido %}
-<link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" type="text/css"/>
-<h1>Dashboard admin</h1>
-    <h1>Hello {{ username }} you are Logged in.</h1>
-    <form method="POST", action="/dashboaradmin_crear_habitacion">
-        {{form.hidden_tag()}}
-        {{form.codigo}}
-        {{form.submit}}
-    </form>
-    <ul>
-        {% for room in rooms %}
-        <li>
-            <span class="{% if room.estado %} available {% else %} notAvailable {% endif %}">{{ room.codigo }}</span>
-            <a href="/cambiarEstado/{{room.id}}">cambiar estado</a> - <a href="/borrar/{{room.id}}">eliminar</a>
-        </li>
-        {% endfor %}
-    </ul>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <strong>{{ message }}</strong>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
-<br>Press <a href="{{ url_for('logout')}}">here</a> to logout
+<body>
+    <div id="principal">
+        <h1>Dashboard admin</h1>
+        <h1>Hello {{session['usuario']}} you are Logged in.</h1>
+        <form method="POST", action="/dashboaradmin_crear_habitacion">
+            {{form.hidden_tag()}}
+            {{form.codigo}}
+            {{form.submit}}
+        </form>
+        <ul>
+            {% for room in rooms %}
+            <li>
+                <span class="{% if room.estado %} available {% else %} notAvailable {% endif %}">{{ room.codigo }}</span>
+                <a href="/cambiarEstado/{{room.id}}" class="texto-activo">cambiar estado</a> - <a href="/borrar/{{room.id}}" class="texto-activo">eliminar</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <strong>{{ message }}</strong>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('logout')}}" class="texto-activo">Logout</a>
+</body>
 {% endblock %}

@@ -1,7 +1,6 @@
 body{
-     background-color: #0d3257;
-     background-repeat: no-repeat;
-     background-size: cover;
+     background-image: url('img1.jpg');
+     background-size: 100% 115%;
 }
 
 .menu{
@@ -28,13 +27,21 @@ body{
      color: #f2f2f2;
 }
 .menu li:hover {
+     border-radius: 10%;
      background-color: #ddd;
-     color: black;
+     color: rgb(51, 51, 51);
 }
  
 .menu li.active {
      background-color: #04AA6D;
      color: white;
+}
+
+#li-menu {
+     display: inline;
+     text-decoration: none;
+     font-size: large;
+     font-weight: bold;
 }
 
 #nombre-hotel{
@@ -43,15 +50,14 @@ body{
      display:inline;
  }
 
-.contenedor{
-     align-items: center;
-     border: none;
+ .contenedor{
+     width: 80%;
+     background-color: rgba(51, 51, 51, 0.675);
+     margin-left: auto;
+     margin-right: auto;
+     padding: 20px;
+     max-width: 500px;
      border-radius: 15px;
-     width: 40%;
-     background-color: rgba(51, 51, 51, 0.678);
-     position: absolute;
-     left:30%;
-     padding-bottom: 4mm;
 }
 
 form h3{
@@ -89,4 +95,32 @@ form p,a{
 }
 .available{
      color:greenyellow
+}
+
+#principal {
+     font-size: x-large;
+     font-weight: bold;
+     color: white;
+     text-align: center;
+     margin-bottom: 0;
+     margin-top: 0;
+}
+
+.texto-activo:hover{
+     border-radius: 10%;
+     background-color: #ddd;
+     color: rgb(51, 51, 51);
+}
+
+.register:hover{
+     border-radius: 10%;
+     background-color: #ddd;
+     color: rgb(51, 51, 51);
+}
+
+#user {
+     font-size: large;
+     font-weight: bold;
+     color: white;
+     display: inline;
 }

@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Dashboard usuario{% endblock %}
 {% block contenido %}
-<h1>Dashboard user</h1>
-    <h1>Hello {{ username }} you are Logged in.</h1>
-
-<a href="{{ url_for('reserva')}}">reserva</a>
-<br>Press <a href="{{ url_for('logout')}}">here</a> to logout
+<body>
+    <div id="principal">
+        <h1>Dashboard usuario</h1>
+        <h1>Bienvenido {{session['usuario']}} has iniciado sesión</h1>
+        <a href="{{ url_for('reserva')}}" class="texto-activo">Reservar</a>
+        <br>
+        <a href="{{ url_for('logout')}}" class="texto-activo">Cerrar Sesión</a>
+    </div>
 {% endblock %}

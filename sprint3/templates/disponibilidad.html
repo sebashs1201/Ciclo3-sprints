@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
 {% block title %}Disponibilidad{% endblock %}
 {% block contenido %}
-<link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" type="text/css"/>
-<h1>Disponibilidad de habitaciones</h1>
-    <h1>Hello {{ username }} you are Logged in.</h1>
-   
-    <ul>
-        {{ fecha }}
-        {% for room in rooms %}
-        <li>
-            {{ room.codigo }} <input type="radio" name="seleccion" >
-            
-        </li>
-        {% endfor %}
-    </ul>
+<body>
+    <div id="principal">
+        <h1>Disponibilidad de habitaciones</h1>
+        <ul>
+            {{ fecha }}
+            {% for room in rooms %}
+            <li>
+                {{ room.codigo }} <input type="radio" name="seleccion" >
+                
+            </li>
+            {% endfor %}
+        </ul>
 
-
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <strong>{{ message }}</strong>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
-<br>Press <a href="{{ url_for('logout')}}">here</a> to logout
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <strong>{{ message }}</strong>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+     <a href="{{ url_for('logout')}}" class="texto-activo">Logout</a>
+    </div>
+</body>
 {% endblock %}

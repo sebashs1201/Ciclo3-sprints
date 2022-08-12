@@ -1,5 +1,5 @@
 body{
-    /* background-image: url("url_for('static',filename='img/img1.jpg')"); */
+    background-image: url("url_for('static',filename='img/img1.jpg')");
     background-color: #0d3257;
     background-size: cover;
     background-repeat: repeat-y;
