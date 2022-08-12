@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Reserva{% endblock %}
+{% block contenido %}
+<body>
+<h1>Reserva page</h1>
+<form method="POST", action="/disponibilidad">
+    {{form.hidden_tag()}}
+    {{form.checkin}}
+    {{form.checkout}}
+    {{form.people}}
+    {{form.submit}}
+</form>
+<br> Press <a href="{{ url_for('logout')}}">here</a> to logout
+</body>
+{% endblock %}

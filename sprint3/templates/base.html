@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" type="text/css"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="background-image" href="{{ url_for('static', filename='img1.jpg') }}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <nav class ="menu">
+        <ul>
+            <h1 id="nombre-hotel">Burj Al Arab</h1>
+            <li>Promociones</li>
+            <li>Galeria de fotos</li>
+            <li>Contacto</li>
+            <li>{% block option %} {% endblock %}</li>
+        </ul>
+    </nav>
+</br>
+    {% if 'usuario' in session: %}
+    <h3>User: {{session['usuario']}}</h3>
+    {% else %}
+    <h3>without user</h3>
+    {% endif %}
+    <div class="contenedor">
+    {% block contenido %}
+    
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard usuario{% endblock %}
+{% block contenido %}
+<h1>Dashboard user</h1>
+    <h1>Hello {{ username }} you are Logged in.</h1>
+
+<a href="{{ url_for('reserva')}}">reserva</a>
+<br>Press <a href="{{ url_for('logout')}}">here</a> to logout
+{% endblock %}
