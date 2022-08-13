@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard usuario{% endblock %}
+{% block contenido %}
+<body>
+<div id="principal">
+    <h1>Dashboard user</h1>
+    <h1>Hello {{ session['usuario'] }} you are Logged in.</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <strong>{{ message }}</strong>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+{% endblock %}
+
+</div>
+</body>

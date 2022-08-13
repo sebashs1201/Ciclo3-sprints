@@ -1,0 +1,126 @@
+body{
+     background-image: url('img1.jpg');
+     background-size: 100% 115%;
+}
+
+.menu{
+     background-color: rgba(51, 51, 51, 0.678);
+     overflow: hidden;
+     border-radius: 15px;
+     font-size: x-large;
+}
+
+.menu li {
+     float: left;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: 17px;
+     float: right;
+     list-style-type: none;
+     text-align: left;
+}
+
+.menu li a{
+     text-decoration: none;
+     color: #f2f2f2;
+}
+.menu li:hover {
+     border-radius: 10%;
+     background-color: #ddd;
+     color: rgb(51, 51, 51);
+}
+ 
+.menu li.active {
+     background-color: #04AA6D;
+     color: white;
+}
+
+#li-menu {
+     display: inline;
+     text-decoration: none;
+     font-size: large;
+     font-weight: bold;
+}
+
+#nombre-hotel{
+     color: white;
+     font-size: xxx-large;
+     display:inline;
+ }
+
+ .contenedor{
+     width: 80%;
+     background-color: rgba(51, 51, 51, 0.675);
+     margin-left: auto;
+     margin-right: auto;
+     padding: 20px;
+     max-width: 500px;
+     border-radius: 15px;
+}
+
+form h3{
+     color: white;
+}
+
+form {
+     width: 50%;
+     max-width: 600px;
+     margin: 0 auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+   
+form input {
+     width: 90%;
+     height: 30px;
+     margin: 0.5rem;
+}
+
+form [type="Submit"]{
+     width: 30%;
+     cursor: pointer;
+}
+
+form p,a{
+     color:white;
+     text-decoration: none;
+}
+.notAvailable{
+     text-decoration: line-through;
+     color:chocolate
+}
+.available{
+     color:greenyellow
+}
+
+#principal {
+     font-size: x-large;
+     font-weight: bold;
+     color: white;
+     text-align: center;
+     margin-bottom: 0;
+     margin-top: 0;
+}
+
+.texto-activo:hover{
+     border-radius: 10%;
+     background-color: #ddd;
+     color: rgb(51, 51, 51);
+}
+
+.register:hover{
+     border-radius: 10%;
+     background-color: #ddd;
+     color: rgb(51, 51, 51);
+}
+
+#user {
+     font-size: large;
+     font-weight: bold;
+     color: white;
+     display: inline;
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Disponibilidad{% endblock %}
+{% block contenido %}
+<body>
+    <div id="principal">
+        <h1>Datos de reserva</h1>
+<form action="/guardarReserva" method="POST">
+    {% for entry in entries %}
+        
+        <input type="text" value="{{ entry }}" readonly>
+        
+    {% endfor %}
+    <input type="submit" value="guardar">
+</form>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Registro de usuario{% endblock %}
+{% block contenido %}
+<body>
+<div id="principal">
+    <h1>Register page</h1>
+<form method="POST", action="">
+    {{form.hidden_tag()}}
+    {{form.identification}}
+    {{form.username}}
+    {{form.password}}
+    {{form.email}}
+    {{form.born}}
+    {{form.submit}}
+</form>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <strong>{{ message }}</strong>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<br>Already have an account? <a class="texto-activo" href="{{ url_for('login')}}">Log in</a>
+
+</div>
+</body>
+{% endblock %}

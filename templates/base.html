@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" type="text/css"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="background-image" href="{{ url_for('static', filename='img1.jpg') }}">
+    
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <nav class ="menu">
+        <ul>
+            <h1 id="nombre-hotel">Burj Al Arab</h1>
+           <section id="li-menu">
+            <li>{% if 'usuario' in session: %}
+                <a href="{{ url_for('logout')}}">Log out</a> 
+            {% else %}<a href="{{ url_for('login')}}">Log in</a>
+            {% endif %}
+        </li>
+        <li>{% if session['tipouser']=='usuario_final' %}
+                <a href="{{ url_for('reserva')}}">Reserva</a>
+            {% else %}<a href="{{ url_for('gestionhabitaciones')}}">Gestion de habitaciones</a>
+            {% endif %}
+        </li>
+        <li>Contacto</li>
+        <li>{% block option %} {% endblock %}</li>
+           </section>
+            <section id="user">
+                {% if 'usuario' in session: %}
+                <p>User: {{session['usuario']}}</p>
+                {% else %}
+                <p class="h3-user">User: Unknown</p>
+                {% endif %}
+            </section>
+        </ul>
+    </nav>
+</br>
+    
+    <div class="contenedor">
+    {% block contenido %}
+    
+    {% endblock %}
+</div>
+</body>
+</html>

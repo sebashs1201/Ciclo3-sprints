@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Añadir Habitación{% endblock %}
+{% block contenido %}
+<body>
+    <div id="principal">
+        <h1>Gestión de habitaciones</h1>
+    <form method="POST", action="/crear_habitacion">
+        {{form.hidden_tag()}}
+        {{form.codigo}}
+        {{form.submit}}
+    </form>
+    <ul>
+        {% for room in rooms %}
+        <li>
+            <span class="{% if room.estado %} available {% else %} notAvailable {% endif %}">{{ room.codigo }}</span>
+            <a class="texto-activo" href="/cambiarEstado/{{room.id}}">cambiar estado</a> - <a class="texto-activo" href="/borrar/{{room.id}}">eliminar</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <strong>{{ message }}</strong>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    </div>
+</body>
+    
+{% endblock %}

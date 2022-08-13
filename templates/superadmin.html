@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Gestion de usuarios{% endblock %}
+{% block contenido %}
+<body>
+    <div id="principal">
+        <h1>Dashboard Superadmin</h1>
+
+    <h1>Gestión de usuarios</h1>
+    <form method="POST", action="/superadmin">
+        <input type="number", placeholder="Identification" name="identification", value="identification">
+        <input type="submit", name="cambiar", value="cambiar">
+    </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <strong>{{ message }}</strong>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    </div>
+</body>
+
+{% endblock %}

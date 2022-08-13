@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Reserva{% endblock %}
+{% block contenido %}
+<body>
+    <div id="principal">
+<h1>Reserva page</h1>
+<form method="POST", action="/disponibilidad">
+    {{form.hidden_tag()}}
+    {{form.checkin}}
+    {{form.checkout}}
+    {{form.people}}
+    {{form.submit}}
+</form>
+</div>
+</body>
+{% endblock %}
